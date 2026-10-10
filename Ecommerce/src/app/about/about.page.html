@@ -1,0 +1,217 @@
+<ion-content [fullscreen]="true">
+
+  <!-- TOP SECTION -->
+
+  <div id="top">
+
+    <!-- LEFT -->
+
+    <div id="top-left">
+
+      <img
+        src="assets/images/logo.png"
+        class="logo">
+
+      <p id="logoname">
+
+        HandmadeMart
+
+      </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div id="top-right">
+
+      <!-- BEFORE LOGIN -->
+
+      <ion-button
+        *ngIf="!isLoggedIn"
+        id="login"
+        fill="clear"
+        (click)="checkUser()">
+
+        <ion-icon
+          name="person-circle-outline">
+
+        </ion-icon>
+
+        Login / Signup
+
+      </ion-button>
+
+      <!-- AFTER LOGIN -->
+
+      <div
+        *ngIf="isLoggedIn"
+        id="user-section">
+
+        <div id="username-box">
+
+          <ion-icon
+            name="person-circle-outline">
+
+          </ion-icon>
+
+          <span>
+
+            {{username}}
+
+          </span>
+
+        </div>
+
+        <ion-button
+          fill="clear"
+          color="danger"
+          (click)="logout()">
+
+          Logout
+
+        </ion-button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- NAVBAR -->
+
+  <div id="nav">
+
+    <a routerLink="/home">
+
+      Home
+
+    </a>
+
+    <a routerLink="/about">
+
+      About Us
+
+    </a>
+
+    <!-- SHOW ONLY AFTER LOGIN -->
+
+    <a
+      *ngIf="isLoggedIn"
+      routerLink="/categories">
+
+      Categories
+
+    </a>
+
+    <a routerLink="/contact">
+
+      Contact Us
+
+    </a>
+
+  </div>
+
+  <!-- ABOUT SECTION -->
+
+  <div id="about">
+
+    <br><br><br>
+
+    <div id="aboutinner">
+
+      <h1>
+
+        About Us
+
+      </h1>
+
+      <h2>
+
+        Welcome to HandmadeMart
+
+      </h2>
+
+      <p>
+
+        At HandmadeMart, we believe every handmade product carries a story,
+        a tradition, and the passion of the artisan who created it.
+        Our platform was built to connect talented creators with people
+        who truly value unique and handcrafted products.
+
+        From elegant jewelry and beautiful home décor to handmade bags,
+        pottery, paintings, candles, and gift items, we bring together
+        a wide collection of carefully crafted products made with love
+        and creativity.
+
+      </p>
+
+      <h2>
+
+        Our Mission
+
+      </h2>
+
+      <p>
+
+        Our mission is to support local artisans and small businesses
+        by providing them with a digital marketplace where they can
+        showcase and sell their handmade creations to customers around
+        the world.
+
+        We aim to:
+
+        <br><br>
+
+        • Promote handmade craftsmanship
+
+        <br>
+
+        • Encourage small-scale businesses
+
+        <br>
+
+        • Deliver quality handmade products
+
+        <br>
+
+        • Provide a smooth and secure shopping experience
+
+      </p>
+
+      <h2>
+
+        Our Vision
+
+      </h2>
+
+      <p>
+
+        We envision a world where handmade artistry is appreciated
+        globally and where artisans can thrive through technology
+        and creativity.
+
+      </p>
+
+      <h2>
+
+        Customer Satisfaction
+
+      </h2>
+
+      <p>
+
+        Customer satisfaction is at the heart of everything we do.
+        We continuously work to improve our platform, provide better
+        services, and create a pleasant shopping experience for every customer.
+
+      </p>
+
+      <br>
+
+    </div>
+
+    <br><br>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,200 @@
+<ion-content>
+
+  <!-- TOP SECTION -->
+
+  <div id="top">
+
+    <!-- LEFT -->
+
+    <div id="top-left">
+
+      <img
+        src="assets/images/logo.png"
+        class="logo">
+
+      <p id="logoname">
+        HandmadeMart
+      </p>
+
+      <!-- SEARCH -->
+
+       <input
+        id="search"
+        type="search"
+
+        [(ngModel)]="searchTerm"
+
+        (ionInput)="searchProducts()"
+
+        placeholder="Search Products">
+
+
+      <!-- WISHLIST -->
+
+      <div
+        id="wishlist-section"
+        routerLink="/wishlist">
+
+        <ion-icon
+          name="heart-outline"
+          id="wishlist">
+        </ion-icon>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+   <div id="top-right">
+<div *ngIf="isLoggedIn" id="user-section">
+
+  <ion-icon
+    name="person-circle-outline"
+    id="usericon">
+
+  </ion-icon>
+
+  <span id="username">
+
+    {{username}}
+
+  </span>
+
+  
+
+      <!-- LOGIN -->
+
+      <ion-button
+        *ngIf="!isLoggedIn"
+        id="login"
+        fill="clear"
+        (click)="checkUser()">
+
+        <ion-icon
+          name="person-outline">
+        </ion-icon>
+
+        Login/Signup
+
+      </ion-button>
+
+      <!-- LOGOUT -->
+
+       <ion-button
+    fill="clear"
+    color="danger"
+    (click)="logout()">
+
+    Logout
+
+  </ion-button>
+
+      </div>
+</div>
+
+  </div>
+
+  <!-- NAVBAR -->
+
+  <div id="nav">
+
+    <a routerLink="/home">
+      Home
+    </a>
+
+    <a routerLink="/about">
+      About Us
+    </a>
+
+    <a routerLink="/categories">
+      Categories
+    </a>
+
+    <a routerLink="/contact">
+      Contact Us
+    </a>
+
+  </div>
+
+  <!-- PAGE TITLE -->
+
+  <div id="title-section">
+
+    <h1>
+
+      {{category}}
+
+    </h1>
+
+    <p>
+
+      Explore beautiful handmade products
+
+    </p>
+
+  </div>
+
+  <!-- PRODUCTS -->
+
+  <div id="products-grid">
+
+    <ion-card *ngFor="let item of filteredProducts">
+
+      <!-- IMAGE -->
+
+      <img
+        [src]="item.image"
+        (click)="openProduct(item)">
+
+      <!-- CONTENT -->
+
+      <ion-card-content>
+
+        <h2>
+
+          {{item.name}}
+
+        </h2>
+
+        <h3>
+
+          ₹ {{item.price}}
+
+        </h3>
+
+        <p>
+
+          {{item.description}}
+
+        </p>
+
+        <!-- BUTTONS -->
+
+        <div class="button-section">
+
+          <ion-button
+            color="danger"
+            (click)="addToWishlist(item)">
+
+            Wishlist
+
+          </ion-button>
+
+          <ion-button
+            color="success"
+            (click)="buyNow(item)">
+
+            Buy Now
+
+          </ion-button>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

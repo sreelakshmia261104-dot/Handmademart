@@ -1,0 +1,173 @@
+<ion-content [fullscreen]="true">
+
+  <!-- ================= TOP BAR ================= -->
+
+  <div id="top">
+
+    <!-- LEFT -->
+
+    <div id="top-left">
+
+      <img
+        src="assets/images/logo.png"
+        class="logo">
+
+      <p id="logoname">
+        HandmadeMart
+      </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div id="top-right">
+
+      <!-- USER SECTION -->
+
+      <div id="user-section">
+
+        <ion-icon
+          name="person-circle-outline"
+          id="usericon">
+
+        </ion-icon>
+
+        <span id="username">
+
+          {{username}}
+
+        </span>
+
+         <ion-button
+    fill="clear"
+    color="danger"
+    (click)="logout()">
+
+    Logout
+
+  </ion-button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <div id="nav">
+
+    <a routerLink="/home">
+      Home
+    </a>
+ <a routerLink="/about">
+      About
+    </a>
+    <a routerLink="/categories">
+      Categories
+    </a>
+    
+    <a routerLink="/contact">
+      Contact Us
+    </a>
+
+  </div>
+
+  <!-- ================= CHECKOUT ================= -->
+
+  <div id="checkout-container">
+
+    <!-- PRODUCT SECTION -->
+
+    <div id="product-section">
+
+      <img
+        [src]="product.image"
+        id="product-image">
+
+      <div id="product-details">
+
+        <h1>
+
+          {{product.name}}
+
+        </h1>
+
+        <h2>
+
+          ₹ {{product.price}}
+
+        </h2>
+
+        <p>
+
+          {{product.description}}
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- FORM SECTION -->
+
+    <div id="form-section">
+
+      <h1>
+
+        Delivery Details
+
+      </h1>
+
+      <!-- BUYER NAME -->
+
+      <ion-item>
+
+        <ion-input
+          placeholder="Buyer Name"
+          [(ngModel)]="buyername">
+
+        </ion-input>
+
+      </ion-item>
+
+      <!-- ADDRESS -->
+
+      <ion-item>
+
+        <ion-textarea
+          placeholder="Address"
+          [(ngModel)]="address">
+
+        </ion-textarea>
+
+      </ion-item>
+
+      <!-- PHONE -->
+
+      <ion-item>
+
+        <ion-input
+          placeholder="Phone Number"
+          [(ngModel)]="phone">
+
+        </ion-input>
+
+      </ion-item>
+
+      <!-- BUTTON -->
+
+      <ion-button
+        expand="block"
+        id="pay-btn"
+        (click)="payNow()">
+
+        Pay Now
+
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>

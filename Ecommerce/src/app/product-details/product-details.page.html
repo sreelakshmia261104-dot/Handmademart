@@ -1,0 +1,67 @@
+<ion-content>
+
+  <div id="popup-container">
+
+    <!-- Close Button -->
+    <ion-icon
+      name="close-outline"
+      id="close-btn"
+      (click)="closePopup()">
+
+    </ion-icon>
+
+    <!-- Left Side -->
+    <div id="left-section">
+
+      <!-- Main Image -->
+      <img [src]="selectedImage"
+           id="main-image">
+
+      <!-- Gallery -->
+      <div id="gallery">
+
+        <img
+          *ngFor="let img of product.gallery"
+          [src]="img">
+
+      </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div id="right-section">
+
+      <h1>{{product.name}}</h1>
+
+      
+
+      <!-- Price -->
+      <h2>₹ {{product.price}}</h2>
+
+      <!-- Description -->
+      <p>
+
+        {{product.description}}
+
+      </p>
+
+      <!-- Buttons -->
+      <div id="buttons">
+
+        <ion-button color="danger">
+
+          ❤️ Wishlist
+
+        </ion-button>
+
+        <ion-button color="success">
+
+          Buy Now
+
+        </ion-button>
+
+      </div>
+
+      </div>
+  </div>
+</ion-content>

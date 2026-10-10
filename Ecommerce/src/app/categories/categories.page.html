@@ -1,0 +1,211 @@
+<ion-content>
+
+  <!-- TOP SECTION -->
+
+  <div id="top">
+
+    <!-- LEFT -->
+
+    <div id="top-left">
+
+      <img
+        src="assets/images/logo.png"
+        class="logo">
+
+      <p id="logoname">
+        HandmadeMart
+      </p>
+
+      <!-- SEARCH -->
+
+      <input
+        id="search"
+        type="search"
+        [(ngModel)]="searchText"
+        (keyup)="searchProducts()"
+        placeholder="Search products or categories">
+      <!-- WISHLIST -->
+
+      <div
+        *ngIf="isLoggedIn"
+        id="wishlist-section"
+        routerLink="/wishlist">
+
+        <ion-icon
+          name="heart-outline"
+          id="wishlist">
+        </ion-icon>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div id="top-right">
+<div *ngIf="isLoggedIn" id="user-section">
+
+  <ion-icon
+    name="person-circle-outline"
+    id="usericon">
+
+  </ion-icon>
+
+  <span id="username">
+
+    {{username}}
+
+  </span>
+
+  
+      <ion-button
+        *ngIf="isLoggedIn"
+        routerLink="/myorders">
+
+        My Orders
+
+      </ion-button>
+
+      <!-- LOGIN -->
+
+      <ion-button
+        *ngIf="!isLoggedIn"
+        id="login"
+        fill="clear"
+        (click)="checkUser()">
+
+        <ion-icon
+          name="person-outline">
+        </ion-icon>
+
+        Login/Signup
+
+      </ion-button>
+
+      <!-- LOGOUT -->
+
+       <ion-button
+    fill="clear"
+    color="danger"
+    (click)="logout()">
+
+    Logout
+
+  </ion-button>
+
+      </div>
+</div>
+    </div>
+
+
+
+  <!-- NAVBAR -->
+
+  <div id="nav">
+
+    <a routerLink="/home">
+      Home
+    </a>
+
+    <a routerLink="/about">
+      About Us
+    </a>
+
+    <a
+      *ngIf="isLoggedIn"
+      routerLink="/categories">
+
+      Categories
+
+    </a>
+
+    <a routerLink="/contact">
+
+      Contact Us
+
+    </a>
+
+  </div>
+
+  <!-- SEARCH RESULTS -->
+
+  <div
+    id="search-results"
+    *ngIf="searchText != ''">
+
+    <!-- PRODUCTS -->
+
+    <ion-card
+      *ngFor="let item of filteredProducts"
+      (click)="openProductCategory(item)">
+
+      <img [src]="item.image">
+
+      <ion-card-content>
+
+        <h2>{{item.name}}</h2>
+
+        <p>{{item.category}}</p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+    <!-- NO RESULTS -->
+
+    <div
+      *ngIf="filteredProducts.length == 0
+      && filteredCategories.length == 0"
+      id="no-results">
+
+      No Products Found
+
+    </div>
+
+  </div>
+
+  <!-- TITLE -->
+
+  <div id="title-section">
+
+    <h1>
+      CATEGORIES
+    </h1>
+
+    <p>
+      Explore our wide range of handmade products
+      crafted with love and perfection.
+    </p>
+
+  </div>
+
+  <!-- CATEGORY GRID -->
+
+  <div id="categories-grid">
+
+    <ion-card
+      *ngFor="let item of filteredCategories">
+
+      <img [src]="item.image">
+
+      <ion-card-content>
+
+        <h2>{{item.name}}</h2>
+
+        <p>{{item.description}}</p>
+
+        <ion-button
+          fill="solid"
+          [routerLink]="['/products', item.name]">
+
+          View All
+
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

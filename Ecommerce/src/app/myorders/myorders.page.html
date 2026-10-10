@@ -1,0 +1,215 @@
+<ion-content [fullscreen]="true">
+
+  <!-- ================= TOP BAR ================= -->
+
+  <div id="top">
+
+    <!-- LEFT -->
+
+    <div id="top-left">
+
+      <img
+        src="assets/images/logo.png"
+        class="logo">
+
+      <p id="logoname">
+
+        HandmadeMart
+
+      </p>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div id="top-right">
+
+      <!-- USER SECTION -->
+
+      <div
+        *ngIf="isLoggedIn"
+        id="user-section">
+
+        <ion-icon
+          name="person-circle-outline"
+          id="usericon">
+
+        </ion-icon>
+
+        <span id="username">
+
+          {{username}}
+
+        </span>
+
+        <ion-button
+          id="logout-btn"
+          (click)="logout()">
+
+          Logout
+
+        </ion-button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <div id="nav">
+
+    <a routerLink="/home">
+
+      Home
+
+    </a>
+
+    <a routerLink="/about">
+
+      About Us
+
+    </a>
+
+    <a routerLink="/categories">
+
+      Categories
+
+    </a>
+
+    <a routerLink="/contact">
+
+      Contact Us
+
+    </a>
+
+  </div>
+
+  <!-- ================= TITLE ================= -->
+
+  <div id="orders-title">
+
+    <h1>
+
+      My Orders 📦
+
+    </h1>
+
+    <p>
+
+      Track all your handmade purchases
+
+    </p>
+
+  </div>
+
+  <!-- ================= EMPTY ORDERS ================= -->
+
+  <div *ngIf="orders.length == 0"
+       id="empty-box">
+
+    <ion-icon
+      name="bag-handle-outline">
+
+    </ion-icon>
+
+    <h1>
+
+      No Orders Yet
+
+    </h1>
+
+    <p>
+
+      Your ordered products will appear here
+
+    </p>
+
+  </div>
+
+  <!-- ================= ORDERS GRID ================= -->
+
+  <div id="orders-grid">
+
+    <ion-card *ngFor="let item of orders">
+
+      <!-- PRODUCT IMAGE -->
+
+      <img
+        src="http://127.0.0.1:8000{{item.productimage}}">
+
+      <!-- CONTENT -->
+
+      <ion-card-content>
+
+        <h1>
+
+          {{item.product_name}}
+
+        </h1>
+
+        <h2>
+
+          ₹ {{item.product_price}}
+
+        </h2>
+
+        <!-- BUYER DETAILS -->
+
+        <div class="details-box">
+
+          <p>
+
+            <strong>Buyer:</strong>
+
+            {{item.buyer_name}}
+
+          </p>
+
+          <p>
+
+            <strong>Phone:</strong>
+
+            {{item.phone}}
+
+          </p>
+
+          <p>
+
+            <strong>Address:</strong>
+
+            {{item.address}}
+
+          </p>
+
+        </div>
+
+        <!-- STATUS -->
+
+        <div class="status-section">
+
+          <ion-chip color="success">
+
+            <ion-icon
+              name="checkmark-circle">
+
+            </ion-icon>
+
+            <ion-label>
+
+              Order Placed
+
+            </ion-label>
+
+          </ion-chip>
+
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

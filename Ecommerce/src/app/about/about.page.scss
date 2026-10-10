@@ -1,0 +1,310 @@
+ion-content{
+  --background:#FAF7F2;
+}
+
+/* TOP SECTION */
+
+#top{
+
+  width:100%;
+  height:120px;
+
+  background:#FAF7F2;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:0 40px;
+
+}
+
+/* LEFT */
+
+#top-left{
+
+  display:flex;
+
+  align-items:center;
+
+}
+
+/* RIGHT */
+
+#top-right{
+
+  display:flex;
+
+  align-items:center;
+
+}
+
+/* LOGO */
+
+.logo{
+
+  width:210px;
+  height:170px;
+
+}
+
+#logoname{
+
+  font-size:45px;
+
+  font-weight:bold;
+
+  color:#3A2A22;
+
+  margin-left:10px;
+
+}
+
+/* LOGIN BUTTON */
+
+#login{
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  color:#3A2A22;
+
+}
+/* USER SECTION */
+
+#user-section{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  background:white;
+
+  padding:10px 18px;
+
+  border-radius:40px;
+
+  box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+
+}
+
+/* USERNAME BOX */
+
+#username-box{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding-right:10px;
+
+}
+
+/* USER ICON */
+
+#username-box ion-icon{
+
+  font-size:38px;
+
+  color:#A56A43;
+
+}
+
+/* USERNAME TEXT */
+
+#username-box span{
+
+  font-size:18px;
+
+  font-weight:600;
+
+  color:#3A2A22;
+
+  text-transform:capitalize;
+
+}
+
+/* LOGOUT BUTTON */
+
+#user-section ion-button{
+
+  --background:#C49A74;
+
+  --color:white;
+
+  --border-radius:25px;
+
+  font-weight:bold;
+
+  height:40px;
+
+  text-transform:none;
+
+}
+
+/* HOVER EFFECT */
+
+#user-section ion-button:hover{
+
+  --background:#A56A43;
+
+}
+/* NAVBAR */
+
+#nav{
+
+  width:100%;
+  height:70px;
+
+  background:#C49A74;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:60px;
+
+}
+
+#nav a{
+
+  text-decoration:none;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+}
+
+/* ABOUT SECTION */
+
+#about{
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+}
+
+/* INNER BOX */
+
+#aboutinner{
+
+  width:85%;
+
+  background:white;
+
+  padding:50px;
+
+  border-radius:20px;
+
+  box-shadow:0px 4px 15px rgba(0,0,0,0.1);
+
+}
+
+/* HEADINGS */
+
+#aboutinner h1{
+
+  text-align:center;
+
+  font-size:50px;
+
+  color:#3A2A22;
+
+  margin-bottom:40px;
+
+}
+
+#aboutinner h2{
+
+  color:#A56A43;
+
+  margin-top:30px;
+
+  font-size:30px;
+
+}
+
+/* PARAGRAPH */
+
+#aboutinner p{
+
+  font-size:19px;
+
+  line-height:1.9;
+
+  color:#555;
+
+  text-align:justify;
+
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:768px){
+
+  #top{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
+
+  }
+
+  #nav{
+
+    gap:20px;
+
+    overflow-x:auto;
+
+  }
+
+  #logoname{
+
+    font-size:30px;
+
+  }
+
+  #aboutinner{
+
+    width:95%;
+
+    padding:25px;
+
+  }
+
+  #aboutinner h1{
+
+    font-size:35px;
+
+  }
+
+  #aboutinner h2{
+
+    font-size:24px;
+
+  }
+
+  #aboutinner p{
+
+    font-size:16px;
+
+  }
+
+}

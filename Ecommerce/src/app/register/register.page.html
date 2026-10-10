@@ -1,0 +1,26 @@
+
+
+<ion-content [fullscreen]="true" id="body">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="register">
+    <h1>Signup</h1><br>
+    <label id="label1">Username</label><br>
+<input type="text" [(ngModel)]="username" placeholder="Username"><br><br>
+<label id="label1">Mobile</label><br>
+<input type="number" [(ngModel)]="mobile" placeholder="Mobile" maxlength="10"><br><br>
+<label id="label1">E-Mail</label><br>
+<input type="email" [(ngModel)]="emailregister" placeholder="E-Mail"><br><br>
+<label id="label1">Create Password</label><br>
+<input type="password"[(ngModel)]="createpassword" placeholder="Create Password"><br><br>
+<label id="label1">Confirm Password</label><br>
+<input type="password" [(ngModel)]="confirmpassword" placeholder="Confirm Password"><br><br>
+
+<ion-button (click)="register()"routerLink="/register">Signup</ion-button>&nbsp;&nbsp;&nbsp;
+<button id="regbtn" (click)="clear()">Clear</button><br><br>
+<label>Already Existing User?<button routerLink="/login">&nbsp;Login</button></label>
+  </div>
+</ion-content>
